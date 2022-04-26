@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/homeFragment"
+        android:title="@string/home_title"
+        android:icon="@drawable/ic_home"/>
+    <item
+        android:id="@+id/animeFragment"
+        android:title="@string/anime_title"
+        android:icon="@drawable/ic_anime"/>
+    <item
+        android:id="@+id/creadorFragment"
+        android:title="@string/creador_title"
+        android:icon="@drawable/ic_creador"/>
+
+</menu>

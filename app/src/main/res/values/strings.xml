@@ -1,0 +1,36 @@
+<resources>
+    <string name="app_name">AnimeNic</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="home_title">Inicio</string>
+    <string name="anime_title">Animes</string>
+    <string name="creador_title">Creador</string>
+    <string name="description_img_foto">Foto del anime</string>
+    <string name="imgSplash">Anime nic logo</string>
+    <string name="loginTitle">ANIME NIC</string>
+    <string name="home_description">Los mejores animes junto a sus creadores en una sola app en la que podrás conocer mas sobre tus animes favoritos y de los que te pueden llegar a gustar</string>
+    <string name="home_description2">Presiona el botón de Animes para ver los mejores animes que puedes llegar a encontrarte, en las que hay acción, comedia, dramas, entre otras cosas</string>
+    <string name="director_name">Hirohiko Araki</string>
+    <string name="fecha_jojo">1/01/1987</string>
+    <string name="movie_title_detail">JoJo\'s Bizarre Adventure</string>
+    <string name="description_anime_detail">La historia de JoJo’s Bizarre Adventure se centra la familia Joestar y su rivalidad con Dio Brando. La obra abarca varias generaciones, teniendo cada una de ellas un descendiente de los Joestar como protagonista, así como un gran número de personajes. En la familia Joestar hay un gran poder que se materializa de distintas maneras, aunque la más popular son los “stands”, unos avatares que personifican el poder interior de cada personaje. Dio Brando, así como sus descendientes, también poseen el poder, robado a la familia Joestar.</string>
+    <string name="anime_detail_fragment_img">imagen jojo</string>
+
+    <string name="strNoTieneCuenta">No tienes cuenta?</string>
+    <string name="strCreaUna">Cree una aquí</string>
+    <string name="button_login">Iniciar sesion</string>
+    <string name="tilPass">Contraseña</string>
+    <string name="helper_text_require">Requerido</string>
+    <string name="tilUser">Usuario</string>
+    <string name="imgAppbar">animeNic appbar img</string>
+    <string name="tilEmail">Email</string>
+    <string name="tilName">Nombre</string>
+    <string name="tilConfirmPass">Confirmar Contraseña</string>
+    <string name="strCrearCuenta">Crear Cuenta</string>
+    <string name="login_activity_message_valid">Revise los campos requeridos antes de continuar</string>
+    <string name="creador_detail_fragment_img">Creador foto img</string>
+    <string name="fecha_Nac">7/06/1960</string>
+    <string name="biografia_title_detail">BIOGRAFIA</string>
+    <string name="description_creador_detail">Hirohiko Araki, nació en Sendai, El 7 de Junio de 1960. En su juventud, Araki vivía con su padre, un empleado de oficina; su madre, una ama de casa; y sus dos hermanas gemelas idénticas más jóvenes. Al crecer, Araki supuso que vivía en una casa sin ningún tipo de bocadillos.</string>
+
+</resources>

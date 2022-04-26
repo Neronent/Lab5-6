@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/homeFragment">
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.example.animenic.view.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_homeFragment_to_animeFragment"
+            app:destination="@id/animeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/animeFragment"
+        android:name="com.example.animenic.view.AnimeFragment"
+        android:label="fragment_anime"
+        tools:layout="@layout/fragment_anime" >
+        <action
+            android:id="@+id/action_animeFragment_to_creadorFragment"
+            app:destination="@id/creadorFragment" />
+        <action
+            android:id="@+id/action_animeFragment_to_detailAnimeFragment"
+            app:destination="@id/detailAnimeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/creadorFragment"
+        android:name="com.example.animenic.view.CreadorFragment"
+        android:label="fragment_creador"
+        tools:layout="@layout/fragment_creador" >
+        <action
+            android:id="@+id/action_creadorFragment_to_detailCreatorFragment"
+            app:destination="@id/detailCreatorFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/detailAnimeFragment"
+        android:name="com.example.animenic.view.DetailAnimeFragment"
+        android:label="fragment_detail_anime"
+        tools:layout="@layout/fragment_detail_anime" />
+    <fragment
+        android:id="@+id/detailCreatorFragment"
+        android:name="com.example.animenic.view.DetailCreatorFragment"
+        android:label="fragment_detail_creator"
+        tools:layout="@layout/fragment_detail_creator" />
+</navigation>
