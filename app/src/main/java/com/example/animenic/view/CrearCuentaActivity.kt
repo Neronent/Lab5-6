@@ -9,6 +9,7 @@ import com.example.animenic.R
 import com.example.animenic.databinding.ActivityCrearCuentaBinding
 import com.google.android.material.snackbar.Snackbar
 import com.google.android.material.textfield.TextInputLayout
+import com.google.firebase.auth.FirebaseAuth
 
 class CrearCuentaActivity : AppCompatActivity() {
     private lateinit var binding: ActivityCrearCuentaBinding
@@ -29,25 +30,62 @@ class CrearCuentaActivity : AppCompatActivity() {
         binding.etConfirmPass.addTextChangedListener { validateFields(binding.tilConfirmPass) }
 
         binding.btnCrearCuenta.setOnClickListener {
-            if(validateFields(binding.tilConfirmPass, binding.tilpass, binding.tilName,binding.tilEmail) && validatePass(binding.etPass.text.toString().trim(),binding.etConfirmPass.text.toString().trim())) {
+            if(validateFields(binding.tilConfirmPass, binding.tilpass, binding.tilName,binding.tilEmail)
+                && validatePass(binding.etPass.text.toString().trim(),binding.etConfirmPass.text.toString().trim())
+                && validateEmail(binding.etEmail.text.toString().trim())) {
+
+                addCuentaUsuario()
                 Toast.makeText(this, "El usuario ha sido creado exitosamente", Toast.LENGTH_SHORT)
                     .show()
                 val intent = Intent(this, MenuActivity::class.java)
                 startActivity(intent)
+
             }
         }
         //findViewById<TextView>() = binding.etName.text.toString()
     }
 
+    fun addCuentaUsuario() {
+        val firebaseAuth: FirebaseAuth = FirebaseAuth.getInstance()
+        firebaseAuth.createUserWithEmailAndPassword(binding.etEmail.text.toString(), binding.etPass.text.toString())
+            .addOnCompleteListener { task ->
+                if (task.isSuccessful) {
+                    Toast.makeText(this, "El usuario ha sido creado", Toast.LENGTH_SHORT).show()
+                    finish()
+                } else {
+                    Toast.makeText(this, "El usuario no ha sido creado", Toast.LENGTH_SHORT).show()
+                }
+            }
+    }
+
+    private fun validateEmail(email: String): Boolean {
+        var isValid = true
+
+        if (email.length > 40){
+            isValid = false
+        }
+
+        if(!isValid) Snackbar.make(binding.root,
+            R.string.login_activity_message_valid_email,
+            Snackbar.LENGTH_SHORT).show()
+
+        return isValid
+    }
+
     private fun validatePass(pass1: String, pass2: String): Boolean {
-        var isValid = false
+        var isValid = true
 
         if(pass1 == pass2) {
             isValid = true
         }
+        if (pass1.length < 6){
+            isValid = false
+        } else if (pass1.length > 16){
+            isValid = false
+        }
 
         if(!isValid) Snackbar.make(binding.root,
-            R.string.login_activity_message_valid,
+            R.string.login_activity_message_valid_pass,
             Snackbar.LENGTH_SHORT).show()
 
 

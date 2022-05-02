@@ -36,6 +36,7 @@ class AdapterEvent(private var evento: MutableList<Evento>, private var listener
                 .into(binding.imgFotoEvento)
 
             binding.imgFotoEvento.setOnClickListener{ listener.onEventClicked(event, position) }
+
         }
 
     }

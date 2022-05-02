@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <integer name="text_max_lenght_pass">8</integer>
-    <integer name="text_max_lenght">15</integer>
-    <integer name="text_max_lenght_email">30</integer>
+    <integer name="text_max_lenght_pass">16</integer>
+    <integer name="text_max_lenght">40</integer>
+    <integer name="text_max_lenght_email">40</integer>
 </resources>

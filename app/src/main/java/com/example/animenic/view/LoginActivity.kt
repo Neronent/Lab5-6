@@ -3,11 +3,13 @@ package com.example.animenic.view
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Toast
 import androidx.core.widget.addTextChangedListener
 import com.example.animenic.R
 import com.example.animenic.databinding.ActivityLoginBinding
 import com.google.android.material.snackbar.Snackbar
 import com.google.android.material.textfield.TextInputLayout
+import com.google.firebase.auth.FirebaseAuth
 
 class LoginActivity : AppCompatActivity() {
     private lateinit var binding: ActivityLoginBinding
@@ -17,13 +19,21 @@ class LoginActivity : AppCompatActivity() {
         binding = ActivityLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        binding.etName.addTextChangedListener { validateFields(binding.tilUsername) }
+        binding.etEmail.addTextChangedListener { validateFields(binding.tilUsername) }
         binding.etPass.addTextChangedListener { validateFields(binding.tilPassword) }
 
+        val firebaseAuth: FirebaseAuth = FirebaseAuth.getInstance()
         binding.btnLogin.setOnClickListener {
             if(validateFields(binding.tilPassword,binding.tilUsername)) {
-                val intent = Intent(this, MenuActivity::class.java)
-                startActivity(intent)
+                firebaseAuth.signInWithEmailAndPassword(binding.etEmail.text.toString(), binding.etPass.text.toString())
+                    .addOnCompleteListener(this) { task ->
+                        if (task.isSuccessful) {
+                            startActivity(Intent(this, MenuActivity::class.java))
+                            Toast.makeText(this, "Bienvenido", Toast.LENGTH_SHORT).show()
+                        } else {
+                            Toast.makeText(this, "El usuario y clave no existen", Toast.LENGTH_SHORT).show()
+                        }
+                    }
             }
         }
 
@@ -47,7 +57,6 @@ class LoginActivity : AppCompatActivity() {
         if(!isValid) Snackbar.make(binding.root,
             R.string.login_activity_message_valid,
             Snackbar.LENGTH_SHORT).show()
-
 
         return isValid
     }

@@ -36,5 +36,7 @@
     <string name="description_creador_detail">Hirohiko Araki was born in Sendai on June 7, 1960. In his youth, Araki lived with his father, an office worker; his mother, a housewife; and her two younger identical twin sisters. Growing up, Araki assumed that he lived in a house without any snacks.</string>
     <string name="imgUbicacion">Image of the ubication</string>
     <string name="event_title">Event</string>
+    <string name="login_activity_message_valid_pass">Both passwords must be the same and must have more than 6 characters and less than 16</string>
+    <string name="login_activity_message_valid_email">Email cannot exceed 40 characters</string>
 
 </resources>

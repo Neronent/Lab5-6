@@ -88,6 +88,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/margentop"
                 android:hint="@string/tilPass"
+                app:counterEnabled="true"
+                app:counterMaxLength="@integer/text_max_lenght_pass"
                 app:endIconMode="password_toggle"
                 app:startIconDrawable="@drawable/ic_lock"
                 app:helperText="@string/helper_text_require">
@@ -106,6 +108,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/margentop"
                 android:hint="@string/tilConfirmPass"
+                app:counterEnabled="true"
+                app:counterMaxLength="@integer/text_max_lenght_pass"
                 app:endIconMode="password_toggle"
                 app:startIconDrawable="@drawable/ic_lock"
                 app:helperText="@string/helper_text_require">

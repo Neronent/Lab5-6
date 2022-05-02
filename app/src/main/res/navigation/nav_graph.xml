@@ -51,5 +51,23 @@
         android:id="@+id/eventoFragment"
         android:name="com.example.animenic.view.EventoFragment"
         android:label="fragment_evento"
-        tools:layout="@layout/fragment_evento" />
+        tools:layout="@layout/fragment_evento" >
+        <action
+            android:id="@+id/action_eventoFragment_to_eventoUbicacionFragment"
+            app:destination="@id/eventoUbicacionFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/eventoUbicacionFragment"
+        android:name="com.example.animenic.view.EventoUbicacionFragment"
+        android:label="fragment_evento_ubicacion"
+        tools:layout="@layout/fragment_evento_ubicacion" >
+        <action
+            android:id="@+id/action_eventoUbicacionFragment_to_eventoUbicacionDetFragment"
+            app:destination="@id/eventoUbicacionDetFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/eventoUbicacionDetFragment"
+        android:name="com.example.animenic.view.EventoUbicacionDetFragment"
+        android:label="fragment_evento_ubicacion_det"
+        tools:layout="@layout/fragment_evento_ubicacion_det" />
 </navigation>

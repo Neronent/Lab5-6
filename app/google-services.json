@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "912304703526",
+    "project_id": "animenic-a485d",
+    "storage_bucket": "animenic-a485d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:912304703526:android:6254ca9366e71ac53ffee7",
+        "android_client_info": {
+          "package_name": "com.example.animenic"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "912304703526-fahjou5kn4u123lvauv1vdoghf90ahe4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAT_ZHetUhjHtUkht08ge-5swEXTBxBKCU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "912304703526-fahjou5kn4u123lvauv1vdoghf90ahe4.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
