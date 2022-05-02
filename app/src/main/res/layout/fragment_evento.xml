@@ -5,10 +5,13 @@
     android:layout_height="match_parent"
     tools:context=".view.EventoFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvEvento"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        tools:listitem="@layout/item_event"
+        android:clipToPadding="false"
+        android:paddingBottom="@dimen/alto5"
+        android:layout_marginBottom="@dimen/margentop"/>
 
 </FrameLayout>

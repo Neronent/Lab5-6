@@ -13,5 +13,9 @@
         android:id="@+id/creadorFragment"
         android:title="@string/creador_title"
         android:icon="@drawable/ic_creador"/>
+    <item
+        android:id="@+id/eventoFragment"
+        android:title="@string/event_title"
+        android:icon="@drawable/ic_event"/>
 
 </menu>

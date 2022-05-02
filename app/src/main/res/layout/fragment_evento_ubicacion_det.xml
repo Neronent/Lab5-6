@@ -38,7 +38,7 @@
                 android:id="@+id/imgUbication"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:layout_behavio="@id/toolubicaciondetalle"
+                app:layout_behavior="@id/toolubication"
                 android:background="@drawable/animenic_appbar"
                 android:contentDescription="@string/imgUbicacion" />
 

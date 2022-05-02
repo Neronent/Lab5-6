@@ -11,6 +11,7 @@ import com.example.animenic.R
 import com.example.animenic.databinding.FragmentAnimeBinding
 import com.example.animenic.model.Anime
 import com.example.animenic.model.Creadores
+import com.example.animenic.model.Evento
 import com.example.animenic.view.adapter.AdapterAnime
 import com.example.animenic.view.adapter.AnimeInterface
 
@@ -57,7 +58,7 @@ class AnimeFragment : Fragment(), AnimeInterface {
     override fun onAnimeClicked(anime: Anime, position: Int) {
         NavHostFragment.findNavController(this).navigate(R.id.detailAnimeFragment)
     }
-
     override fun onCreatorClicked(creador: Creadores, position: Int) {}
+    override fun onEventClicked(evento: Evento, position: Int) {}
 
 }

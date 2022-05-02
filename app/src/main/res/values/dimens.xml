@@ -15,6 +15,7 @@
     <dimen name="alto4">30dp</dimen>
     <dimen name="alto5">40dp</dimen>
     <dimen name="alto6">1dp</dimen>
+    <dimen name="alto7">125dp</dimen>
 
     <dimen name="common_padding_min">8dp</dimen>
     <dimen name="common_padding_default">16dp</dimen>

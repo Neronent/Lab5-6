@@ -33,6 +33,9 @@
         <action
             android:id="@+id/action_creadorFragment_to_detailCreatorFragment"
             app:destination="@id/detailCreatorFragment" />
+        <action
+            android:id="@+id/action_creadorFragment_to_eventoFragment"
+            app:destination="@id/eventoFragment" />
     </fragment>
     <fragment
         android:id="@+id/detailAnimeFragment"
@@ -44,4 +47,9 @@
         android:name="com.example.animenic.view.DetailCreatorFragment"
         android:label="fragment_detail_creator"
         tools:layout="@layout/fragment_detail_creator" />
+    <fragment
+        android:id="@+id/eventoFragment"
+        android:name="com.example.animenic.view.EventoFragment"
+        android:label="fragment_evento"
+        tools:layout="@layout/fragment_evento" />
 </navigation>
