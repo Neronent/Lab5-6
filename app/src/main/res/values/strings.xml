@@ -32,5 +32,6 @@
     <string name="fecha_Nac">7/06/1960</string>
     <string name="biografia_title_detail">BIOGRAFIA</string>
     <string name="description_creador_detail">Hirohiko Araki, nació en Sendai, El 7 de Junio de 1960. En su juventud, Araki vivía con su padre, un empleado de oficina; su madre, una ama de casa; y sus dos hermanas gemelas idénticas más jóvenes. Al crecer, Araki supuso que vivía en una casa sin ningún tipo de bocadillos.</string>
+    <string name="imgUbicacion">Imagen de la ubicacion</string>
 
 </resources>

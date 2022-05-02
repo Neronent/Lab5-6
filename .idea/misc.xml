@@ -12,9 +12,13 @@
         <entry key="..\:/Users/Admin/AndroidStudioProjects/AnimeNic/app/src/main/res/layout/fragment_creador.xml" value="0.42916666666666664" />
         <entry key="..\:/Users/Admin/AndroidStudioProjects/AnimeNic/app/src/main/res/layout/fragment_detail_anime.xml" value="0.42916666666666664" />
         <entry key="..\:/Users/Admin/AndroidStudioProjects/AnimeNic/app/src/main/res/layout/fragment_detail_creator.xml" value="0.42916666666666664" />
+        <entry key="..\:/Users/Admin/AndroidStudioProjects/AnimeNic/app/src/main/res/layout/fragment_evento.xml" value="0.42916666666666664" />
+        <entry key="..\:/Users/Admin/AndroidStudioProjects/AnimeNic/app/src/main/res/layout/fragment_evento_ubicacion.xml" value="0.33" />
+        <entry key="..\:/Users/Admin/AndroidStudioProjects/AnimeNic/app/src/main/res/layout/fragment_evento_ubicacion_det.xml" value="0.33" />
         <entry key="..\:/Users/Admin/AndroidStudioProjects/AnimeNic/app/src/main/res/layout/fragment_home.xml" value="0.42916666666666664" />
         <entry key="..\:/Users/Admin/AndroidStudioProjects/AnimeNic/app/src/main/res/layout/item_animes.xml" value="0.33" />
         <entry key="..\:/Users/Admin/AndroidStudioProjects/AnimeNic/app/src/main/res/layout/item_creadores.xml" value="0.42916666666666664" />
+        <entry key="..\:/Users/Admin/AndroidStudioProjects/AnimeNic/app/src/main/res/layout/item_event.xml" value="0.42916666666666664" />
         <entry key="..\:/Users/Admin/AndroidStudioProjects/AnimeNic/app/src/main/res/menu/menu_animenic.xml" value="0.30185185185185187" />
       </map>
     </option>

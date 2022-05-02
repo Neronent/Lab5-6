@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:fitsSystemWindows="true"
+    tools:context=".view.EventoUbicacionDetFragment">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/NoActionBar">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolubication"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardDatosUbicacion"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/alto4"
+        android:layout_gravity="center"
+        app:cardCornerRadius="@dimen/margen1"
+        app:cardElevation="@dimen/margen"
+        app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/imgUbication"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_behavio="@id/toolubicaciondetalle"
+                android:background="@drawable/animenic_appbar"
+                android:contentDescription="@string/imgUbicacion" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                tools:text="Ubicacion del evento"
+                android:textColor="@color/black"
+                android:textSize="@dimen/tamtexto1"/>
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/txtDireccionEvento"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableLeft="@drawable/ic_location"
+                android:textColor="@color/black"
+                android:gravity="center|left"
+                android:maxLines="2"
+                tools:text="Axo. Villa Libertad"
+                android:padding="@dimen/margenizq"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/alto6"
+                android:background="@color/cardview_dark_background"/>
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/txtSitioWebEvento"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableLeft="@drawable/ic_link"
+                android:textColor="@color/black"
+                android:gravity="center|left"
+                android:maxLines="2"
+                tools:text="www.JoRelojes.com"
+                android:padding="@dimen/margenizq"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/alto6"
+                android:background="@color/cardview_dark_background"/>
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/txtTelefonoEvento"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableLeft="@drawable/ic_phone"
+                android:textColor="@color/black"
+                android:gravity="center|left"
+                android:maxLines="2"
+                tools:text="12345678"
+                android:padding="@dimen/margenizq"/>
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

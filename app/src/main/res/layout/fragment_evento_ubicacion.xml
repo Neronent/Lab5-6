@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:fitsSystemWindows="true"
+    tools:context=".view.EventoUbicacionFragment">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appbarEvento"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/margentop1"
+        android:background="@color/primaryColor"
+        android:theme="@style/NoActionBar">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolDetailEvent"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/margentop1"
+            android:theme="@style/AppTheme.AppBarOverlay"
+            app:navigationIcon="?attr/homeAsUpIndicator"/>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <fragment
+        android:id="@+id/map"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
