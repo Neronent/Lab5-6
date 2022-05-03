@@ -35,7 +35,9 @@ class AdapterEvent(private var evento: MutableList<Evento>, private var listener
                 .centerCrop()
                 .into(binding.imgFotoEvento)
 
-            binding.imgFotoEvento.setOnClickListener{ listener.onEventClicked(event, position) }
+            itemView.setOnClickListener{ view ->
+                listener.onEventClicked(event, position)
+            }
 
         }
 

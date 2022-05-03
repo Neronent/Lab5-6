@@ -74,7 +74,7 @@ class EventoUbicacionFragment : DialogFragment(), OnMapReadyCallback, GoogleMap.
         markerOptions.position(centerMark)
         markerOptions.title(eventoLugar)
 
-        val bitmapDraw = context?.applicationContext?.let { ContextCompat.getDrawable(it, R.drawable.ic_location) } as BitmapDrawable
+        val bitmapDraw = context?.applicationContext?.let{ ContextCompat.getDrawable(it, R.drawable.ic_location) } as BitmapDrawable
         val smallMarker = Bitmap.createScaledBitmap(bitmapDraw.bitmap,150,150,false)
         markerOptions.icon(BitmapDescriptorFactory.fromBitmap(smallMarker))
 
