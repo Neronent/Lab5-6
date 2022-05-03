@@ -30,6 +30,7 @@
         app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior">
 
         <LinearLayout
+            android:id="@+id/linear"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
@@ -43,6 +44,7 @@
                 android:contentDescription="@string/imgUbicacion" />
 
             <TextView
+                android:id="@+id/tv_evento_ubicacion"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center_horizontal"

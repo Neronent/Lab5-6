@@ -9,25 +9,24 @@
     tools:context=".view.EventoUbicacionFragment">
 
     <com.google.android.material.appbar.AppBarLayout
-        android:id="@+id/appbarEvento"
+        android:id="@+id/appbarevento"
         android:layout_width="match_parent"
         android:layout_height="@dimen/margentop1"
         android:background="@color/primaryColor"
-        android:theme="@style/NoActionBar">
-
+        android:theme="@style/Theme.Design.NoActionBar">
         <androidx.appcompat.widget.Toolbar
-            android:id="@+id/toolDetailEvent"
+            android:id="@+id/tooldetallevento"
             android:layout_width="match_parent"
             android:layout_height="@dimen/margentop1"
             android:theme="@style/AppTheme.AppBarOverlay"
-            app:navigationIcon="?attr/homeAsUpIndicator"/>
-
+            app:navigationIcon="?attr/homeAsUpIndicator">
+        </androidx.appcompat.widget.Toolbar>
     </com.google.android.material.appbar.AppBarLayout>
 
-    <fragment
+    <androidx.fragment.app.FragmentContainerView
         android:id="@+id/map"
         android:name="com.google.android.gms.maps.SupportMapFragment"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent"/>
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

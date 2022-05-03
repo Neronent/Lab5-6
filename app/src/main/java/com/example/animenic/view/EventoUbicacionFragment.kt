@@ -47,7 +47,7 @@ class EventoUbicacionFragment : DialogFragment(), OnMapReadyCallback, GoogleMap.
             eventoLugar = objUbicacion.getString("Lugar").toString()
         }
 
-        val toolbar: Toolbar = view.findViewById(R.id.toolDetailEvent)
+        val toolbar: Toolbar = binding.tooldetallevento
         (activity as AppCompatActivity).setSupportActionBar(toolbar)
         toolbar.title = "Ubicacion"
         toolbar.setTitleTextColor(Color.WHITE)
@@ -58,6 +58,7 @@ class EventoUbicacionFragment : DialogFragment(), OnMapReadyCallback, GoogleMap.
 
         //Agregar el marcador en el mapa
         //Informacion de ubicacion
+
         val mapFragment = childFragmentManager.findFragmentById(R.id.map) as SupportMapFragment
         mapFragment.getMapAsync(this)
 
@@ -74,7 +75,7 @@ class EventoUbicacionFragment : DialogFragment(), OnMapReadyCallback, GoogleMap.
         markerOptions.position(centerMark)
         markerOptions.title(eventoLugar)
 
-        val bitmapDraw = context?.applicationContext?.let{ ContextCompat.getDrawable(it, R.drawable.ic_location) } as BitmapDrawable
+        val bitmapDraw = context?.applicationContext?.let{ ContextCompat.getDrawable(it, R.drawable.ic_location_google2) } as BitmapDrawable
         val smallMarker = Bitmap.createScaledBitmap(bitmapDraw.bitmap,150,150,false)
         markerOptions.icon(BitmapDescriptorFactory.fromBitmap(smallMarker))
 

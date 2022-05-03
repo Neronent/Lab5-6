@@ -28,6 +28,8 @@ class AdapterEvent(private var evento: MutableList<Evento>, private var listener
 
         with(holder) {
             binding.tvNombreEvento.text = event.eventoLugar
+            binding.tvHoraEvento.text = event.hora
+            binding.tvCategoriaEvento.text = event.eventoCategoria
 
             Glide.with(mContext)
                 .load(event.eventoPhoto)
@@ -35,7 +37,7 @@ class AdapterEvent(private var evento: MutableList<Evento>, private var listener
                 .centerCrop()
                 .into(binding.imgFotoEvento)
 
-            itemView.setOnClickListener{ view ->
+            itemView.setOnClickListener{
                 listener.onEventClicked(event, position)
             }
 
