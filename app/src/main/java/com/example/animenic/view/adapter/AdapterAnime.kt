@@ -45,7 +45,6 @@ class AdapterAnime (private var animes: MutableList<Anime>, private var listener
 
     inner class ViewHolder(itemView: View): RecyclerView.ViewHolder(itemView) {
         val binding = ItemAnimesBinding.bind(itemView)
-
     }
 
 }

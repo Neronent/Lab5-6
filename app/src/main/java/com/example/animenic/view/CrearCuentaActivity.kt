@@ -39,6 +39,7 @@ class CrearCuentaActivity : AppCompatActivity() {
                     .show()
                 val intent = Intent(this, MenuActivity::class.java)
                 startActivity(intent)
+                finish()
 
             }
         }
@@ -88,7 +89,6 @@ class CrearCuentaActivity : AppCompatActivity() {
             R.string.login_activity_message_valid_pass,
             Snackbar.LENGTH_SHORT).show()
 
-
         return isValid
     }
 
@@ -105,7 +105,6 @@ class CrearCuentaActivity : AppCompatActivity() {
         if(!isValid) Snackbar.make(binding.root,
             R.string.login_activity_message_valid,
             Snackbar.LENGTH_SHORT).show()
-
 
         return isValid
     }

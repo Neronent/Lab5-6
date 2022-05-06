@@ -30,6 +30,7 @@ class LoginActivity : AppCompatActivity() {
                         if (task.isSuccessful) {
                             startActivity(Intent(this, MenuActivity::class.java))
                             Toast.makeText(this, "Bienvenido", Toast.LENGTH_SHORT).show()
+                            finish()
                         } else {
                             Toast.makeText(this, "El usuario y clave no existen", Toast.LENGTH_SHORT).show()
                         }

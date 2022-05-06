@@ -21,8 +21,4 @@ class MenuActivity : AppCompatActivity() {
         setupWithNavController(menuAnimenic, findNavController(this, R.id.frag_navgraph))
     }
 
-    override fun onBackPressed() {
-        super.onBackPressed()
-        onDestroy()
-    }
 }
