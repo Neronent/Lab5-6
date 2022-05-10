@@ -19,6 +19,7 @@ class MenuActivity : AppCompatActivity() {
 
         val menuAnimenic: BottomNavigationView = binding.bottomNavMenu
         setupWithNavController(menuAnimenic, findNavController(this, R.id.frag_navgraph))
+
     }
 
 }

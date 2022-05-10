@@ -1,13 +1,14 @@
 package com.example.animenic.model
 
-data class Evento(
-    var hora: String,
-    var eventoLugar: String,
-    var eventoCategoria: String,
-    var eventoDireccion: String,
-    var eventoLatitud: Double,
-    var eventoLongitud: Double,
-    var eventoTelefono: String,
-    var eventoWebsite: String,
-    var eventoPhoto: String
-)
+import java.io.Serializable
+
+class Evento: Serializable{
+    var hora: String = ""
+    var EventoLugar: String = ""
+    var EventoDireccion: String = ""
+    var EventoLatitud: Double = 0.0
+    var EventoLongitud: Double = 0.0
+    var EventoTelefono: String = ""
+    var EventoWebSite: String = ""
+    var EventoPhoto: String = ""
+}

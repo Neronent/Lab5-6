@@ -1,7 +1,10 @@
 package com.example.animenic.model
 
-data class Creadores(var nombreCreador: String,
-                     var fechaNac: String,
-                     var obrasRealizadas: Int,
-                     var UrlCreador: String,
-                     var isFavorite: Boolean = false)
+import java.io.Serializable
+
+class Creadores: Serializable {
+    var nombreCreador: String = ""
+    var fechaNac: String = ""
+    var obrasRealizadas: Int = 0
+    var UrlCreador: String = ""
+}

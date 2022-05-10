@@ -29,7 +29,6 @@ class AdapterCreador(private var creador: MutableList<Creadores>, private var li
 
         with(holder){
             binding.tvNombreCreador.text = creator.nombreCreador
-            binding.cbFavorite.isChecked =  creator.isFavorite
 
             Glide.with(mContext)
                 .load(creator.UrlCreador)

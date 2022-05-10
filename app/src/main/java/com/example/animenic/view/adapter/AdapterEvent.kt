@@ -27,12 +27,11 @@ class AdapterEvent(private var evento: MutableList<Evento>, private var listener
         val event = evento[position]
 
         with(holder) {
-            binding.tvNombreEvento.text = event.eventoLugar
+            binding.tvNombreEvento.text = event.EventoLugar
             binding.tvHoraEvento.text = event.hora
-            binding.tvCategoriaEvento.text = event.eventoCategoria
 
             Glide.with(mContext)
-                .load(event.eventoPhoto)
+                .load(event.EventoPhoto)
                 .diskCacheStrategy(DiskCacheStrategy.ALL)
                 .centerCrop()
                 .into(binding.imgFotoEvento)

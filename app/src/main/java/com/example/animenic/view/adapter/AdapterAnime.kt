@@ -27,7 +27,6 @@ class AdapterAnime (private var animes: MutableList<Anime>, private var listener
 
         with(holder){
             binding.tvNombreAnime.text = anime.nombreAnime
-            binding.cbFavorite.isChecked = anime.isFavorite
 
             Glide.with(mContext)
                 .load(anime.UrlAnime)
