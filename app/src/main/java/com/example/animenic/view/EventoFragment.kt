@@ -61,12 +61,11 @@ class EventoFragment : Fragment(), AnimeInterface {
         })
     }
 
-
     override fun onAnimeClicked(anime: Anime, position: Int) {}
     override fun onCreatorClicked(creador: Creadores, position: Int) {}
     override fun onEventClicked(evento: Evento, position: Int) {
 
-        val bundle = bundleOf("Eventos" to evento)
+        val bundle = bundleOf("Evento" to evento)
 
         //Cuando de click lo manda a eventoubicacion fragment
         NavHostFragment.findNavController(this).navigate(R.id.eventoUbicacionFragment, bundle)

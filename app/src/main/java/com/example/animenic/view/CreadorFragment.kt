@@ -60,7 +60,7 @@ class CreadorFragment : Fragment(), AnimeInterface {
     override fun onAnimeClicked(anime: Anime, position: Int) {}
 
     override fun onCreatorClicked(creador: Creadores, position: Int) {
-        val bundle = bundleOf("Creadores" to creador)
+        val bundle = bundleOf("Creador" to creador)
         NavHostFragment.findNavController(this).navigate(R.id.detailCreatorFragment, bundle)
     }
 

@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.core.os.bundleOf
+import androidx.core.view.isVisible
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.NavHostFragment
@@ -57,11 +58,17 @@ class AnimeFragment : Fragment(), AnimeInterface {
         viewModel.listGaleria.observe(viewLifecycleOwner, Observer<List<Anime>> { Anime ->
             animeAdapter.updateData(Anime)
         })
+        viewModel.isLoading.observe(viewLifecycleOwner, Observer {
+            if (it != null) {
+                binding.animeLoading.isVisible = false
+            }
+        })
+
     }
 
 
     override fun onAnimeClicked(anime: Anime, position: Int) {
-        val bundle = bundleOf("Animes" to anime)
+        val bundle = bundleOf("Anime" to anime)
 
         NavHostFragment.findNavController(this).navigate(R.id.detailAnimeFragment, bundle)
     }

@@ -9,7 +9,10 @@ import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import androidx.navigation.Navigation
+import com.bumptech.glide.Glide
+import com.bumptech.glide.load.engine.DiskCacheStrategy
 import com.example.animenic.databinding.FragmentDetailAnimeBinding
+import com.example.animenic.model.Anime
 
 class DetailAnimeFragment : Fragment() {
 
@@ -21,6 +24,18 @@ class DetailAnimeFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         _binding = FragmentDetailAnimeBinding.inflate(inflater,container,false)
+
+        var animate = arguments?.getSerializable("Anime") as Anime
+        binding.tvNombreCreador.text = animate.Creador
+        binding.tvFechaAnime.text = animate.fechaAnime
+        binding.tvNombreAnime.text = animate.nombreAnime
+        context?.let {
+            Glide.with(it).load(animate.UrlAnime)
+                .diskCacheStrategy(DiskCacheStrategy.ALL)
+                .centerCrop()
+                .into(binding.imgDetalleAnime)
+        }
+
         return binding.root
     }
 

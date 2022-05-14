@@ -69,6 +69,9 @@ dependencies {
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
 
+    //Shimmer
+    implementation 'com.facebook.shimmer:shimmer:0.5.0'
+
     // Live Data y ViewModel
     implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.4.1'
     implementation 'androidx.lifecycle:lifecycle-extensions:2.2.0'
