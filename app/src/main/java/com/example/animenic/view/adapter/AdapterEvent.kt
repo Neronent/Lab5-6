@@ -30,11 +30,11 @@ class AdapterEvent(private var listener: AnimeInterface) : RecyclerView.Adapter<
         val event = listEventos[position]
 
         with(holder) {
-            binding.tvNombreEvento.text = event.EventoLugar
+            binding.tvNombreEvento.text = event.eventoLugar
             binding.tvHoraEvento.text = event.hora
 
             Glide.with(mContext)
-                .load(event.EventoPhoto)
+                .load(event.eventoPhoto)
                 .diskCacheStrategy(DiskCacheStrategy.ALL)
                 .centerCrop()
                 .into(binding.imgFotoEvento)

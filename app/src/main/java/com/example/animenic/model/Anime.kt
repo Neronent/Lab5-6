@@ -7,5 +7,6 @@ class Anime: Serializable{
     var UrlAnime: String = ""
     var fechaAnime: String = ""
     var Creador: String = ""
+    var sinopsisAnime: String = ""
 }
 

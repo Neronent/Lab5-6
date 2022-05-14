@@ -13,14 +13,15 @@ import androidx.appcompat.widget.Toolbar
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.DialogFragment
 import androidx.navigation.Navigation
+import com.bumptech.glide.Glide
+import com.bumptech.glide.load.engine.DiskCacheStrategy
 import com.example.animenic.R
 import com.example.animenic.databinding.FragmentEventoUbicacionDetBinding
+import com.example.animenic.model.Evento
 
 class EventoUbicacionDetFragment : DialogFragment() {
 
     private lateinit var binding: FragmentEventoUbicacionDetBinding
-
-    private var eventoLugar: String = ""
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -30,7 +31,6 @@ class EventoUbicacionDetFragment : DialogFragment() {
         return binding.root
     }
 
-    @SuppressLint("SetTextI18n")
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         val toolbar: Toolbar = view.findViewById(R.id.toolubication)
@@ -42,25 +42,27 @@ class EventoUbicacionDetFragment : DialogFragment() {
             dismiss()
             Navigation.findNavController(it).navigateUp()
         }
-        val objUbicacion: Bundle? = arguments
-        if (objUbicacion != null) {
-            eventoLugar = objUbicacion.getString("Lugar").toString()
+        val event = arguments?.getSerializable("Evento") as Evento
+
+        binding.tvEventoUbicacion.text = event.eventoLugar
+        binding.txtDireccionEvento.text = event.eventoDireccion
+        binding.txtTelefonoEvento.text = event.eventoTelefono
+        binding.txtSitioWebEvento.text = event.eventoWebSite
+        context?.let {
+            Glide.with(it).load(event.eventoPhoto)
+                .diskCacheStrategy(DiskCacheStrategy.ALL)
+                .centerCrop()
+                .into(binding.imgUbication)
         }
-
-
-        binding.tvEventoUbicacion.text = eventoLugar
-        binding.txtDireccionEvento.text = "Axo. Villa Libertad"
-        binding.txtTelefonoEvento.text = "22705128"
-        binding.txtSitioWebEvento.text = "https://www.jorelojes.com"
 
         binding.txtSitioWebEvento.setOnClickListener {
             val intent = Intent(Intent.ACTION_VIEW)
-            intent.data = Uri.parse("https://www.jorelojes.com")
+            intent.data = Uri.parse(event.eventoWebSite)
             startActivity(intent)
         }
         binding.txtTelefonoEvento.setOnClickListener {
             val intent = Intent(Intent.ACTION_DIAL).apply {
-                data = Uri.parse("tel:${22705128}")
+                data = Uri.parse(event.eventoTelefono)
             }
             startActivity(intent)
         }

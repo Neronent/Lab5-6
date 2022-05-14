@@ -36,5 +36,6 @@
     <string name="event_title">Evento</string>
     <string name="login_activity_message_valid_pass">Ambas contraseñas deben ser iguales y deben tener mas de 6 caracteres y menos de 16</string>
     <string name="login_activity_message_valid_email">El correo no puede sobrepasar los 40 caracteres</string>
+    <string name="strObrasRealizadas">Obras Realizadas:</string>
 
 </resources>

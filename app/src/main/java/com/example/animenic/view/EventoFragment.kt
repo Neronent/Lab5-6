@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.core.os.bundleOf
+import androidx.core.view.isVisible
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.NavHostFragment
@@ -58,6 +59,11 @@ class EventoFragment : Fragment(), AnimeInterface {
     fun observeViewModel() {
         viewModel.listEvento.observe(viewLifecycleOwner, Observer<List<Evento>> { Evento ->
             animeAdapter.updateData(Evento)
+        })
+        viewModel.isLoading.observe(viewLifecycleOwner, Observer {
+            if (it != null) {
+                binding.eventoLoading.isVisible = false
+            }
         })
     }
 

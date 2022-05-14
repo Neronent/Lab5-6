@@ -7,4 +7,5 @@ class Creadores: Serializable {
     var fechaNac: String = ""
     var obrasRealizadas: Int = 0
     var UrlCreador: String = ""
+    var biografiaCreador: String = ""
 }

@@ -29,6 +29,7 @@ class DetailAnimeFragment : Fragment() {
         binding.tvNombreCreador.text = animate.Creador
         binding.tvFechaAnime.text = animate.fechaAnime
         binding.tvNombreAnime.text = animate.nombreAnime
+        binding.tvSinopsisAnime.text = animate.sinopsisAnime
         context?.let {
             Glide.with(it).load(animate.UrlAnime)
                 .diskCacheStrategy(DiskCacheStrategy.ALL)

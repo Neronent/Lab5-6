@@ -41,11 +41,11 @@ class EventoUbicacionFragment : DialogFragment(), OnMapReadyCallback, GoogleMap.
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        var objUbicacion = arguments?.getSerializable("Eventos") as Evento
+        var objUbicacion = arguments?.getSerializable("Evento") as Evento
 
-        latitud = objUbicacion.EventoLatitud
-        longitud = objUbicacion.EventoLongitud
-        eventoLugar = objUbicacion.EventoLugar
+        latitud = objUbicacion.eventoLatitud
+        longitud = objUbicacion.eventoLongitud
+        eventoLugar = objUbicacion.eventoLugar
 
         val toolbar: Toolbar = binding.tooldetallevento
         (activity as AppCompatActivity).setSupportActionBar(toolbar)
@@ -88,7 +88,7 @@ class EventoUbicacionFragment : DialogFragment(), OnMapReadyCallback, GoogleMap.
 
     override fun onMarkerClick(googleMap: Marker): Boolean {
         val bundle = Bundle()
-        bundle.putString("Lugar",eventoLugar)
+
         NavHostFragment.findNavController(this).navigate(R.id.eventoUbicacionDetFragment, bundle)
         return true
     }

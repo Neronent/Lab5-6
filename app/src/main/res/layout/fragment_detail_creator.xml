@@ -45,52 +45,87 @@
         android:layout_height="match_parent"
         app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
-        <LinearLayout
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
+            android:layout_height="match_parent">
 
             <TextView
                 android:id="@+id/tvNombre"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
                 android:text="@string/director_name"
                 android:textSize="@dimen/tamtexto1"
                 android:textStyle="bold"
-                />
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/imgDetalleCreador"
+                app:layout_constraintEnd_toEndOf="parent"
+                tools:ignore="NotSibling" />
             <TextView
                 android:id="@+id/tvFechaNac"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/fecha_Nac"
                 android:textSize="@dimen/tamtexto2"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvNombre"
                 />
             <View
+                android:id="@+id/view"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/alto3"
-                android:background="@color/primaryColor"/>
+                android:background="@color/primaryColor"
+                app:layout_constraintTop_toBottomOf="@id/tvFechaNac"/>
             <TextView
-                android:id="@+id/tvTitle_biologia"
+                android:id="@+id/tvTitleObrasRealizadas"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/view"
+                android:paddingTop="@dimen/margen"
+                android:paddingHorizontal="@dimen/margen1"
+                android:text="@string/strObrasRealizadas"
+                />
+            <TextView
+                android:id="@+id/tvObrasRealizadas"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toEndOf="@id/tvTitleObrasRealizadas"
+                app:layout_constraintTop_toBottomOf="@id/view"
+                android:paddingTop="@dimen/margen"
+                android:paddingHorizontal="@dimen/margen1"/>
+            <View
+                android:id="@+id/view1"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/alto6"
+                android:background="@color/primaryColor"
+                app:layout_constraintTop_toBottomOf="@id/tvTitleObrasRealizadas"/>
+            <TextView
+                android:id="@+id/tvTitle_biografia"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/biografia_title_detail"
                 android:textSize="@dimen/tamtexto1"
-                android:layout_gravity="center_horizontal"
                 android:textStyle="bold"
-                android:layout_marginTop="@dimen/margen"/>
+                android:layout_marginTop="@dimen/margen"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/view1"
+                />
             <TextView
-                android:id="@+id/tvBiologia"
+                android:id="@+id/tvBiografia"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:text="@string/description_creador_detail"
+                tools:text="@string/description_creador_detail"
                 android:gravity="center_horizontal"
                 android:paddingTop="@dimen/margen"
                 android:paddingHorizontal="@dimen/margen1"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvTitle_biografia"
                 />
 
-        </LinearLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.core.widget.NestedScrollView>
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

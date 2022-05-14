@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.core.os.bundleOf
+import androidx.core.view.isVisible
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.NavHostFragment
@@ -54,6 +55,11 @@ class CreadorFragment : Fragment(), AnimeInterface {
     fun observeViewModel() {
         viewModel.listCreadores.observe(viewLifecycleOwner, Observer<List<Creadores>> { Creadores ->
             creadorAdapter.updateData(Creadores)
+        })
+        viewModel.isLoading.observe(viewLifecycleOwner, Observer {
+            if (it != null) {
+                binding.creadorLoading.isVisible = false
+            }
         })
     }
 
