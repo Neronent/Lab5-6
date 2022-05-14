@@ -11,7 +11,9 @@ import com.example.animenic.R
 import com.example.animenic.databinding.ItemAnimesBinding
 import com.example.animenic.model.Anime
 
-class AdapterAnime (private var animes: MutableList<Anime>, private var listener: AnimeInterface) : RecyclerView.Adapter<AdapterAnime.ViewHolder>() {
+class AdapterAnime (private var listener: AnimeInterface) : RecyclerView.Adapter<AdapterAnime.ViewHolder>() {
+
+    var listAnime = ArrayList<Anime>()
 
     private lateinit var mContext: Context
 
@@ -23,7 +25,7 @@ class AdapterAnime (private var animes: MutableList<Anime>, private var listener
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        val anime = animes[position]
+        val anime = listAnime[position]
 
         with(holder){
             binding.tvNombreAnime.text = anime.nombreAnime
@@ -40,7 +42,15 @@ class AdapterAnime (private var animes: MutableList<Anime>, private var listener
 
     }
 
-    override fun getItemCount(): Int = animes.size
+    override fun getItemCount(): Int = listAnime.size
+
+    fun updateData(data:List<Anime>)
+    {
+        listAnime.clear()
+        listAnime.addAll(data)
+        notifyDataSetChanged()
+    }
+
 
     inner class ViewHolder(itemView: View): RecyclerView.ViewHolder(itemView) {
         val binding = ItemAnimesBinding.bind(itemView)

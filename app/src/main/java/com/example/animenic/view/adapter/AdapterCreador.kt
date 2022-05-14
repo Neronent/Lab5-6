@@ -9,9 +9,12 @@ import com.bumptech.glide.Glide
 import com.bumptech.glide.load.engine.DiskCacheStrategy
 import com.example.animenic.R
 import com.example.animenic.databinding.ItemCreadoresBinding
+import com.example.animenic.model.Anime
 import com.example.animenic.model.Creadores
 
-class AdapterCreador(private var creador: MutableList<Creadores>, private var listener: AnimeInterface) : RecyclerView.Adapter<AdapterCreador.ViewHolder>() {
+class AdapterCreador(private var listener: AnimeInterface) : RecyclerView.Adapter<AdapterCreador.ViewHolder>() {
+
+    var listCreadores = ArrayList<Creadores>()
 
     private lateinit var mContext: Context
 
@@ -25,7 +28,7 @@ class AdapterCreador(private var creador: MutableList<Creadores>, private var li
 
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        val creator = creador[position]
+        val creator = listCreadores[position]
 
         with(holder){
             binding.tvNombreCreador.text = creator.nombreCreador
@@ -41,7 +44,14 @@ class AdapterCreador(private var creador: MutableList<Creadores>, private var li
         }
     }
 
-    override fun getItemCount(): Int = creador.size
+    override fun getItemCount(): Int = listCreadores.size
+
+    fun updateData(data:List<Creadores>)
+    {
+        listCreadores.clear()
+        listCreadores.addAll(data)
+        notifyDataSetChanged()
+    }
 
     inner class ViewHolder(itemView: View): RecyclerView.ViewHolder(itemView){
         val binding = ItemCreadoresBinding.bind(itemView)

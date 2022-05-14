@@ -9,10 +9,13 @@ import com.bumptech.glide.Glide
 import com.bumptech.glide.load.engine.DiskCacheStrategy
 import com.example.animenic.R
 import com.example.animenic.databinding.ItemEventBinding
+import com.example.animenic.model.Anime
 import com.example.animenic.model.Creadores
 import com.example.animenic.model.Evento
 
-class AdapterEvent(private var evento: MutableList<Evento>, private var listener: AnimeInterface) : RecyclerView.Adapter<AdapterEvent.ViewHolder>() {
+class AdapterEvent(private var listener: AnimeInterface) : RecyclerView.Adapter<AdapterEvent.ViewHolder>() {
+
+    var listEventos = ArrayList<Evento>()
 
     private lateinit var mContext: Context
 
@@ -24,7 +27,7 @@ class AdapterEvent(private var evento: MutableList<Evento>, private var listener
     }
 
     override fun onBindViewHolder(holder: AdapterEvent.ViewHolder, position: Int) {
-        val event = evento[position]
+        val event = listEventos[position]
 
         with(holder) {
             binding.tvNombreEvento.text = event.EventoLugar
@@ -44,7 +47,15 @@ class AdapterEvent(private var evento: MutableList<Evento>, private var listener
 
     }
 
-    override fun getItemCount(): Int = evento.size
+    override fun getItemCount(): Int = listEventos.size
+
+    fun updateData(data:List<Evento>)
+    {
+        listEventos.clear()
+        listEventos.addAll(data)
+        notifyDataSetChanged()
+    }
+
 
     inner class ViewHolder(itemView: View): RecyclerView.ViewHolder(itemView){
         val binding = ItemEventBinding.bind(itemView)

@@ -15,6 +15,7 @@ import androidx.navigation.Navigation
 import androidx.navigation.fragment.NavHostFragment
 import com.example.animenic.R
 import com.example.animenic.databinding.FragmentEventoUbicacionBinding
+import com.example.animenic.model.Evento
 import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.OnMapReadyCallback
@@ -40,12 +41,11 @@ class EventoUbicacionFragment : DialogFragment(), OnMapReadyCallback, GoogleMap.
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val objUbicacion: Bundle? = arguments
-        if(objUbicacion != null) {
-            latitud = objUbicacion.getDouble("Latitud")
-            longitud = objUbicacion.getDouble("Longitud")
-            eventoLugar = objUbicacion.getString("Lugar").toString()
-        }
+        var objUbicacion = arguments?.getSerializable("Eventos") as Evento
+
+        latitud = objUbicacion.EventoLatitud
+        longitud = objUbicacion.EventoLongitud
+        eventoLugar = objUbicacion.EventoLugar
 
         val toolbar: Toolbar = binding.tooldetallevento
         (activity as AppCompatActivity).setSupportActionBar(toolbar)
