@@ -12,15 +12,12 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.NavHostFragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.animenic.R
-import com.example.animenic.databinding.FragmentAnimeBinding
 import com.example.animenic.databinding.FragmentEventoBinding
 import com.example.animenic.model.Anime
 import com.example.animenic.model.Creadores
 import com.example.animenic.model.Evento
-import com.example.animenic.view.adapter.AdapterAnime
 import com.example.animenic.view.adapter.AdapterEvent
 import com.example.animenic.view.adapter.AnimeInterface
-import com.example.animenic.viewmodel.AnimeViewModel
 import com.example.animenic.viewmodel.EventoViewModel
 
 class EventoFragment : Fragment(), AnimeInterface {
@@ -28,7 +25,7 @@ class EventoFragment : Fragment(), AnimeInterface {
     private var fbinding: FragmentEventoBinding? = null
     private val binding get() = fbinding!!
 
-    private lateinit var animeAdapter: AdapterEvent
+    private lateinit var eventoAdapter: AdapterEvent
     private lateinit var viewModel:EventoViewModel
 
     override fun onCreateView(
@@ -44,11 +41,11 @@ class EventoFragment : Fragment(), AnimeInterface {
 
         viewModel = ViewModelProvider(this, ViewModelProvider.NewInstanceFactory())[EventoViewModel::class.java]
         viewModel.refresh()
-        animeAdapter = AdapterEvent(this)
+        eventoAdapter = AdapterEvent(this)
 
         binding.rvEvento.apply {
             layoutManager = LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
-            adapter = animeAdapter
+            adapter = eventoAdapter
         }
         observeViewModel()
 
@@ -58,7 +55,7 @@ class EventoFragment : Fragment(), AnimeInterface {
     //Observar los datos del RecyclerView
     fun observeViewModel() {
         viewModel.listEvento.observe(viewLifecycleOwner, Observer<List<Evento>> { Evento ->
-            animeAdapter.updateData(Evento)
+            eventoAdapter.updateData(Evento)
         })
         viewModel.isLoading.observe(viewLifecycleOwner, Observer {
             if (it != null) {

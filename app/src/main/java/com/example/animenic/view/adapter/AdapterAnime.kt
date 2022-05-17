@@ -51,7 +51,6 @@ class AdapterAnime (private var listener: AnimeInterface) : RecyclerView.Adapter
         notifyDataSetChanged()
     }
 
-
     inner class ViewHolder(itemView: View): RecyclerView.ViewHolder(itemView) {
         val binding = ItemAnimesBinding.bind(itemView)
     }
