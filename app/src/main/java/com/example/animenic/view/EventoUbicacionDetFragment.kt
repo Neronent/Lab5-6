@@ -1,6 +1,5 @@
 package com.example.animenic.view
 
-import android.annotation.SuppressLint
 import android.content.Intent
 import android.graphics.Color
 import android.net.Uri
@@ -17,11 +16,16 @@ import com.bumptech.glide.Glide
 import com.bumptech.glide.load.engine.DiskCacheStrategy
 import com.example.animenic.R
 import com.example.animenic.databinding.FragmentEventoUbicacionDetBinding
-import com.example.animenic.model.Evento
 
 class EventoUbicacionDetFragment : DialogFragment() {
 
     private lateinit var binding: FragmentEventoUbicacionDetBinding
+
+    var direccion: String = ""
+    var eventoLugar: String=""
+    var website: String=""
+    var tel: String = ""
+    var foto: String = ""
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -42,14 +46,24 @@ class EventoUbicacionDetFragment : DialogFragment() {
             dismiss()
             Navigation.findNavController(it).navigateUp()
         }
-        val event = arguments?.getSerializable("Evento") as Evento
 
-        binding.tvEventoUbicacion.text = event.eventoLugar
-        binding.txtDireccionEvento.text = event.eventoDireccion
-        binding.txtTelefonoEvento.text = event.eventoTelefono
-        binding.txtSitioWebEvento.text = event.eventoWebSite
+        val objUbicacion: Bundle? = arguments
+        if (objUbicacion != null) {
+            eventoLugar = objUbicacion.getString("Lugar").toString()
+            website = objUbicacion.getString("Website").toString()
+            tel = objUbicacion.getString("Telefono").toString()
+            direccion = objUbicacion.getString("Direccion").toString()
+            foto = objUbicacion.getString("Foto").toString()
+        }
+
+        binding.tvEventoUbicacion.text = eventoLugar
+        binding.txtDireccionEvento.text = direccion
+        binding.txtTelefonoEvento.text = tel
+        binding.txtSitioWebEvento.text = website
+
         context?.let {
-            Glide.with(it).load(event.eventoPhoto)
+            Glide.with(it)
+                .load(foto)
                 .diskCacheStrategy(DiskCacheStrategy.ALL)
                 .centerCrop()
                 .into(binding.imgUbication)
@@ -57,12 +71,12 @@ class EventoUbicacionDetFragment : DialogFragment() {
 
         binding.txtSitioWebEvento.setOnClickListener {
             val intent = Intent(Intent.ACTION_VIEW)
-            intent.data = Uri.parse(event.eventoWebSite)
+            intent.data = Uri.parse(website)
             startActivity(intent)
         }
         binding.txtTelefonoEvento.setOnClickListener {
             val intent = Intent(Intent.ACTION_DIAL).apply {
-                data = Uri.parse(event.eventoTelefono)
+                data = Uri.parse("tel:${tel}")
             }
             startActivity(intent)
         }

@@ -25,8 +25,12 @@ import com.google.android.gms.maps.model.*
 class EventoUbicacionFragment : DialogFragment(), OnMapReadyCallback, GoogleMap.OnMarkerClickListener {
 
     var latitud: Double = 0.0
-    var longitud: Double = 0.0
-    var eventoLugar: String = ""
+    var longitud: Double=0.0
+    var eventoLugar: String=""
+    var direccion: String = ""
+    var website: String=""
+    var tel: String = ""
+    var foto: String = ""
 
     private lateinit var binding: FragmentEventoUbicacionBinding
 
@@ -41,11 +45,16 @@ class EventoUbicacionFragment : DialogFragment(), OnMapReadyCallback, GoogleMap.
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        var objUbicacion = arguments?.getSerializable("Evento") as Evento
-
-        latitud = objUbicacion.eventoLatitud
-        longitud = objUbicacion.eventoLongitud
-        eventoLugar = objUbicacion.eventoLugar
+        val objUbicacion = arguments?.getSerializable("Evento") as Evento
+        if (objUbicacion != null) {
+            latitud = objUbicacion.eventoLatitud
+            direccion = objUbicacion.eventoDireccion
+            longitud = objUbicacion.eventoLongitud
+            eventoLugar = objUbicacion.eventoLugar
+            website = objUbicacion.eventoWebSite
+            tel = objUbicacion.eventoTelefono
+            foto = objUbicacion.eventoPhoto
+        }
 
         val toolbar: Toolbar = binding.tooldetallevento
         (activity as AppCompatActivity).setSupportActionBar(toolbar)
@@ -73,7 +82,7 @@ class EventoUbicacionFragment : DialogFragment(), OnMapReadyCallback, GoogleMap.
         val centerMark = LatLng(latitud, longitud)
         val markerOptions = MarkerOptions()
         markerOptions.position(centerMark)
-        markerOptions.title(eventoLugar)
+        markerOptions.title(direccion)
 
         val bitmapDraw = context?.applicationContext?.let{ ContextCompat.getDrawable(it, R.drawable.ic_location_google2) } as BitmapDrawable
         val smallMarker = Bitmap.createScaledBitmap(bitmapDraw.bitmap,150,150,false)
@@ -88,6 +97,11 @@ class EventoUbicacionFragment : DialogFragment(), OnMapReadyCallback, GoogleMap.
 
     override fun onMarkerClick(googleMap: Marker): Boolean {
         val bundle = Bundle()
+        bundle.putString("Lugar", eventoLugar)
+        bundle.putString("Direccion", direccion)
+        bundle.putString("Website", website)
+        bundle.putString("Telefono", tel)
+        bundle.putString("Foto", foto)
 
         NavHostFragment.findNavController(this).navigate(R.id.eventoUbicacionDetFragment, bundle)
         return true
